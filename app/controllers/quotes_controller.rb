@@ -1,16 +1,16 @@
-class ReviewsController < ApplicationController
+class QuotesController < ApplicationController
   before_action :set_agency, only: [:new, :create]
 
-  # GET /reviews/new
+  # GET /quotes/new
   def new
-    @review = Review.new
+    @quote = Quote.new
   end
 
-  # POST /reviews
+  # POST /quotes
   def create
-    @review = @agency.reviews.new(review_params)
-    if @review.save!
-      redirect_to @review.agency, notice: 'Review was successfully recorded.'
+    @quote = @agency.quotes.new(quote_params)
+    if @quote.save!
+      redirect_to @quote.agency, notice: 'Quote was successfully recorded.'
     else
       render @agency
     end
