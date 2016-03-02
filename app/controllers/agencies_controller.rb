@@ -23,6 +23,7 @@ class AgenciesController < ApplicationController
   def create
     @agency = Agency.new(agency_params)
 
+
     if @agency.save
       redirect_to @agency, notice: 'Agency was successfully created.'
     else
@@ -53,6 +54,6 @@ class AgenciesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def agency_params
-      params.require(:agency).permit(:name, :description, :address)
+      params.require(:agency).permit(:name, :description, :address, :user_id)
     end
 end
