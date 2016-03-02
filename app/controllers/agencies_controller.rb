@@ -8,6 +8,8 @@ class AgenciesController < ApplicationController
 
   # GET /agencies/1
   def show
+    @agency = Agency.find(params[:id])
+
   end
 
   # GET /agencies/new

@@ -8,13 +8,16 @@
 
 
 # Seed user
-User.destroy_all
-user1 = User.create!(email:"admin@admin.com", password: "124567890")
+user1 = User.first_or_create!(email:"admin@admin.com", password: "124567890")
+user2 = User.first_or_create!(email:"exemple@admin.com", password: "12345678")
+
 
 
 # Seed agency
-Agency.destroy_all
-agency1 = Agency.create!(name:"Fullsix", user: user1)
+agency1 = Agency.first_or_create!(name:"Fullsix", user: user1)
+
+
+review1 = Review.first_or_create!(description: " so good ", agency: agency1, user: user2)
 
 
 
