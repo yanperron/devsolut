@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :agencies do
     resources :reviews, only: [:new, :create]
+    resources :references, only: [:new, :create]
   end
 
   devise_for :users
