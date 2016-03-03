@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 20160302170137) do
     t.index ["user_id"], name: "index_agencies_on_user_id", using: :btree
   end
 
+  create_table "references", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "agency_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "photo"
+    t.index ["agency_id"], name: "index_references_on_agency_id", using: :btree
+
   create_table "quotes", force: :cascade do |t|
     t.text     "titre"
     t.text     "description"
@@ -68,6 +77,7 @@ ActiveRecord::Schema.define(version: 20160302170137) do
   end
 
   add_foreign_key "agencies", "users"
+  add_foreign_key "references", "agencies"
   add_foreign_key "quotes", "agencies"
   add_foreign_key "quotes", "users"
   add_foreign_key "reviews", "agencies"
