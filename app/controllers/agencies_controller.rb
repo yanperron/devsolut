@@ -8,6 +8,8 @@ class AgenciesController < ApplicationController
 
   # GET /agencies/1
   def show
+    @agency = Agency.find(params[:id])
+
   end
 
   # GET /agencies/new
@@ -22,6 +24,7 @@ class AgenciesController < ApplicationController
   # POST /agencies
   def create
     @agency = Agency.new(agency_params)
+
 
     if @agency.save
       redirect_to @agency, notice: 'Agency was successfully created.'
@@ -53,6 +56,6 @@ class AgenciesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def agency_params
-      params.require(:agency).permit(:name, :description, :address)
+      params.require(:agency).permit(:name, :description, :address, :user_id)
     end
 end

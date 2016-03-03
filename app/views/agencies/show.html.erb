@@ -15,5 +15,27 @@
   <%= @agency.address %>
 </p>
 
+<p>
+<strong>References:</strong>
+</p>
+<% @agency.references.each do |r| %>
+<p> <%= r.name %> </p>
+<p> <%= r.description %> </p>
+<%= cl_image_tag r.photo, crop: :fill %>
+<% end %>
+
+<p>
+<strong>Reviews:</strong>
+</p>
+<% @agency.reviews.each do |r| %>
+<p> <%= r.description %> </p>
+<p> <%= r.user.last_name %> </p>
+
+<% end %>
+<%= link_to 'Add a Review', new_agency_review_path(@agency) %> |
+<%= link_to 'Add a Reference', new_agency_reference_path(@agency) %> |
+<%= link_to 'Ask for a quote', new_agency_quote_path(@agency) %> |
 <%= link_to 'Edit', edit_agency_path(@agency) %> |
 <%= link_to 'Back', agencies_path %>
+
+
