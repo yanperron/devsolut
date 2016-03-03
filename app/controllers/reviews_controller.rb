@@ -1,12 +1,12 @@
 class ReviewsController < ApplicationController
   before_action :set_agency, only: [:new, :create]
 
-  # GET /agencies/new
+  # GET /reviews/new
   def new
     @review = Review.new
   end
 
-  # POST /agencies
+  # POST /reviews
   def create
     @review = @agency.reviews.new(review_params)
     if @review.save!
