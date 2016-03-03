@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   resources :agencies do
     resources :reviews, only: [:new, :create]
+    resources :quotes, only: [:new, :create]
+  end
+
+  require "sidekiq/web"
+  authenticate :user, lambda { |u| u.admin } do
+    mount Sidekiq::Web => '/sidekiq'
   end
 
   devise_for :users

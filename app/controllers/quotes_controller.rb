@@ -24,7 +24,7 @@ class QuotesController < ApplicationController
   end
 
   # Only allow a trusted parameter "white list" through.
-  def review_params
-    params.require(:review).permit(:description, :agency_id, :user_id)
+  def quote_params
+    params.require(:quote).permit(:description, :agency_id, :user_id)
   end
 end
