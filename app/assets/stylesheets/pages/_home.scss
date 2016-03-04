@@ -1,101 +1,3 @@
-body {
-  font-family: 'open sans', sans-serif;
-  color: #6f6e74;
-  line-height: 20px;
-  background-color: white;
-}
-
-
-
-h1 {
-  color: #605e69;
-  margin-top: 50px;
-  margin-bottom: 30px;
-}
-
-
-
-
-input {
-  border-radius: 2px;
-}
-
-
-
-
-/******* Navbar *******/
-
-.navbar {
-
-  background-color: #fe5f55;
-  transition: all 0.3s ease;
-  height: 40px;
-  padding: 0px 30px;
-  border-radius: 0px;
-}
-
-
-.navbar-fixed {
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  z-index: 1;
-  width: 100%;
-  font-size: 50px;
-  font-weight: lighter;
-  letter-spacing: 1px;
-  box-shadow: 0 0 2px;
-}
-
-
-.navbar a {
-  color: white;
-  font-size: 14px;
-  margin-left: -25px;
-  font-weight: normal;
-  padding-left: 20px;
-  margin-left: 15px;
-}
-
-.navbar a:hover {
-  color: #616668;
-}
-
-
-.navbar-left {
-  font-weight: bold;
-  margin-top: 5px;
-  text-decoration: none;
-}
-
-
-
-.navbar-right {
-  align-items: center;
-  margin-top: 12px;
-  font-size: 15px;
-  margin-right: -25px;
-}
-
-
-.navbar-item {
-  flex: 0 1 auto;
-  cursor: pointer;
-  padding: 0 20px;
-}
-
-
-.navbar-link {
-  color: #616668;
-  font-size: 14px;
-}
-
-
-.navbar-link:hover {
-  color: #a2ecc4;
-  text-decoration: none;
-}
-
 .btn-small {
   border: 1px solid white;
   height: 32px;
@@ -124,15 +26,6 @@ input {
 #refe {
   margin-top: -2px;
 }
-
-
-
-
-
-
-
-
-
 
 /******* Menu mignature en model xs *******/
 
@@ -185,6 +78,15 @@ input {
 
 
 /****** Page d'accueil ******/
+
+.home .banner-background {
+  background-image: linear-gradient(-225deg, rgba(255, 255, 255, 0.4) 100%, rgba(255, 255, 255, 0.4) 100%), url('fondbanner3.png');
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  background-repeat: no-repeat;
+  margin-top: 50px;
+}
 
 .banner-background {
   color: white;
@@ -447,33 +349,7 @@ blockquote {
 
 /****** Bas de page *******/
 
-  #footer {
-    background: #444545;
-    padding-top: 10px;
-    padding-right: 20px;
-    color: white;
-    background-size: cover;
-  }
 
-      /**** Logos links ****/
-
-      .list-inline .fa {
-        font-size: 25px;
-        letter-spacing: 1px;
-        color: white;
-        display: inline-block;
-        margin-left: 20px;
-        margin-bottom: 40px;
-        margin-top: 20px;
-      }
-
-      .fa:hover {
-        color: #d23333;
-      }
-
-      .text-right {
-        margin-top: 20px;
-      }
 
 
 
