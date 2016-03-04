@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TODO</title>
-    <%= csrf_meta_tags %>
-    <%= action_cable_meta_tag %>
+     <title>Devsolut</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
-  <body>
+  <body class="<%= "#{controller_name} #{action_name}" %>">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <div class="container-fluid">
     <%= yield %>
+    </div>
+    <%= render 'shared/footer' %>
+
     <%= javascript_include_tag 'application' %>
   </body>
 </html>
+
+
+
+
+
+

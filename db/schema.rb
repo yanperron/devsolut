@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160302173458) do
+=======
+ActiveRecord::Schema.define(version: 20160303140246) do
+>>>>>>> d0f8db6a4d0d8a460f6b36f41bf1245a84c8f3b2
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,9 +24,13 @@ ActiveRecord::Schema.define(version: 20160302173458) do
     t.string   "name"
     t.text     "description"
     t.string   "address"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.integer  "user_id"
+    t.string   "github_account"
+    t.integer  "repos_public"
+    t.integer  "total_stars"
+    t.integer  "total_members"
     t.index ["user_id"], name: "index_agencies_on_user_id", using: :btree
   end
 
