@@ -14,6 +14,7 @@ class GithubEnrichmentJob < ApplicationJob
 
      agency.repos_public = api.repos_public
      agency.total_stars = api.total_stars
+     agency.total_members = api.total_members
 
      agency.save
 
