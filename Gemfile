@@ -18,6 +18,7 @@ gem 'simple_form', github: 'plataformatec/simple_form'
 gem 'autoprefixer-rails'
 gem 'cloudinary'
 gem 'carrierwave'
+gem 'nokogiri'
 
 #gem 'sidekiq'
 #gem 'sinatra'  # Dependency of sidekiq
