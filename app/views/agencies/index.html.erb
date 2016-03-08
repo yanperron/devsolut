@@ -6,45 +6,10 @@
 
 <div class="padded">
 <h1 class="text-center">Voici toutes les Agences suscesptible de vous intéressez  :</h1>
-  <div class="container">
-    <div class="row">
-        <% @agencies.each do |agency| %>
-            <div class="col-xs-12 col-md-4"  >
-            <%= link_to agency_path(agency) do %>
-
-              <div class="card-product" id="fontindex" >
-                <strong>  <%= cl_image_tag agency.photo, class:"card-logo"  %> </strong>
-              </div>
-
-                <div class="col-xs-12 col-md-6"  >
-
-                <div class="card-content text-center">
-                <strong>  <p><%= agency.name  %></p>
-                  <p><% star = agency.review_mean %></p>
-                   <% (1..star).to_a.each do %>
-                  <i class="fa fa-star"></i>
-                  <% end %>
-
-                  <p><%= agency.description %></p> </strong>
-
-
-                  <div class="btn btn-primary">
-                  voir l'Agence
-                  </div>
-                </div>
-                </div>
-              </div>
-            </div>
-
-            <% end %>
-          <% end %>
-
-
-    </div>
-  </div>
+<%= render "agencies/agenciescard" %>
 
 </div>
-</div>
+
 
 
 
