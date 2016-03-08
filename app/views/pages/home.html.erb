@@ -3,6 +3,15 @@
       <div class="banner-content">
         <h1>Vous cherchez une agence ?</h1>
 
+<!-- Formulaire à refactoriser avec un form_tag -->
+        <%= form_tag agencies_path do %>
+        <%= select_tag "where", options_for_select([ "France", "Ile de France" ], "France"),  class: "form-control"  %>
+        <%= select_tag "what", options_for_select([ "Developpement web", "Developpement mobile" ], "Developpement web"), class: "form-control"  %>
+        <%= button_tag "Trouver", class: "btn btn-primary btn-lg" %>
+        <% end %>
+
+<!-- end -->
+
         <div class="text-center">
             <select class="form-control select select-primary select2-offscreen" data-toggle="select" tabindex="-1" title="" placeholder="ou?">
             <option value="0">Où ?</option>
@@ -99,7 +108,38 @@
 
 
 
+<!-- Top des agences avec une card-->
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <div class="card-review">
+      <img src="http://unsplash.it/50/50" alt="" class="avatar card-avatar">
+      <div class="card-star">
+        <% 3. times do %>
+          <i class="fa fa-star"></i>
+        <% end %>
+      </div>
+      <div class="card-title">
+        <h4>Elephantius</h4>
+      </div>
+
+      <div class="card-quote">
+      <div class="quote-wrapper">
+        <p class="quote-start quote-tick">"</p>
+         <p class="quote-content">Agence spécialisée en developpement d'application iOS et particulièrement les réseaux sociaux.</p>
+         <p class="quote-end quote-tick">"</p>
+      </div>
+      </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <!-- Top des agences -->
+
 
 
   <div id="feature-container2" class="text-center">
