@@ -1,4 +1,7 @@
 class AgenciesController < ApplicationController
+
+  skip_before_action :authenticate_user!, only: [:compare, :index, :show]
+
   before_action :set_agency, only: [:show, :edit, :update, :destroy]
 
   # GET /agencies
@@ -9,7 +12,6 @@ class AgenciesController < ApplicationController
   # GET /agencies/1
   def show
     @agency = Agency.find(params[:id])
-
   end
 
   # GET /agencies/new
@@ -35,10 +37,20 @@ class AgenciesController < ApplicationController
 
   # PATCH/PUT /agencies/1
   def update
+        @agency = Agency.find(params[:id])
+
     if @agency.update(agency_params)
       redirect_to @agency, notice: 'Agency was successfully updated.'
     else
       render :edit
+    end
+  end
+
+  def compare
+    ids = params[:ids].split(',')
+    @agencies = []
+    ids.each do |id|
+      @agencies << Agency.find(id)
     end
   end
 
@@ -56,6 +68,7 @@ class AgenciesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def agency_params
-      params.require(:agency).permit(:name, :description, :address, :user_id)
+      params.require(:agency).permit(:name, :description, :address, :user_id, :photo, :photo_cache)
     end
+
 end

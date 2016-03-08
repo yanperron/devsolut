@@ -1,92 +1,19 @@
-.btn-small {
-  border: 1px solid white;
-  height: 32px;
-  text-align: center;
-  width: 150px;
-  padding-top: 4px;
-  margin-top: -20px;
-}
+/****** banner home *******/
 
-.btn-small:hover {
-  border: 1px solid white;
-  background-color: #e1dddd;
-  color: #616668;
-}
-
-
-#ref {
-  border-color: #5776b6;
-  margin-top: -30px;
-}
-
-#refe:hover {
-  color: #616668;
-}
-
-#refe {
-  margin-top: -2px;
-}
-
-/******* Menu mignature en model xs *******/
-
-.navbar-item {
-  margin-top: -35px;
-  color: white;
-}
-
-.navbar-dropdown-menu {
-  margin-top: 15px;
-  box-shadow: 1px 1px 4px #E6E6E6;
-  border-color: white;
-  margin-left: 300px;
-}
-
-.navbar-dropdown-menu li > a {
-  transition: color 0.3s ease;
-  font-weight: lighter ;
-  color: #999999;
-  font-size: 15px;
-  line-height: 22px;
-  padding: 10px 20px;
-  margin-left: 10px;
-}
-
-.navbar-dropdown-menu li > a:hover {
-  background: transparent;
-  color: #d23333;
-}
-
-.navbar-dropdown-menu:before {
-  content: '';
-  height: 10px;
-  width: 10px;
-  position: fixed;
-  right: 10px;
-  top: -6px;
-  background-color: white;
-  transform: rotate(45deg);
-  border-left: 1px solid #E6E6E6;
-  border-top: 1px solid #E6E6E6;
+#video_background{
+position: absolute;
+bottom: 0px;
+right: 0px;
+min-width: 100%;
+min-height: 100%;
+width: auto;
+height: auto;
+z-index: -1000;
+overflow: hidden;
 }
 
 
 
-
-
-
-
-
-
-/****** Page d'accueil ******/
-
-.home .banner-background {
-  background-image: linear-gradient(-225deg, rgba(255, 255, 255, 0.4) 100%, rgba(255, 255, 255, 0.4) 100%), url('fondbanner3.png');
-  background-size: cover;
-  background-position: center;
-  height: 600px;
-  background-repeat: no-repeat;
-  margin-top: 50px;
-}
 
 .banner-background {
   color: white;
@@ -98,22 +25,10 @@
   justify-content: center;
 }
 
-
-.background-image {
-  margin-top: 50px;
-}
-
-
-.banner-background img {
-  filter: blur(0px);
-}
-
-
 .banner-content h1 {
   font-family: 'Arial', sans-serif;
   font-size: 45px;
   color: #616668;
-  margin-top: 120px;
   letter-spacing: 0px;
   font-weight: normal;
 }
@@ -161,12 +76,36 @@ h2 {
 
 
 
+#photo {
+
+
+}
+
+
+
+
 /******* Nos services ******/
+
+
+#color h3 {
+  font-size: 35px;
+  margin-top: -80px;
+}
+
+
+#color img {
+  margin-top: -290px;
+  margin-bottom: -300px;
+  height: 400px;
+
+}
+
+
 
 
 .icon-wrapper img {
   width: 50px;
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 25px;
 }
 
@@ -177,12 +116,12 @@ h2 {
 
 
 .col-md-12 h2 {
-  margin-top: 80px;
-  margin-bottom: 50px;
-}
+ margin-top: 80px;
+   margin-bottom: 50px;
+ }
 
 
-h3 {
+ h3 {
   margin-bottom: 45px;
 }
 
@@ -194,8 +133,9 @@ h3 {
 }
 
 
-
-
+.fa {
+  color: #f2de37;
+}
 
 
 
@@ -218,15 +158,6 @@ h3 {
 }
 
 
-.col-xs-12 img{
-  margin-top: 100px;
-  border-radius: 2px;
-}
-
-
-ul li {
-  display: inline;
-}
 
 
 .top-agencies h4 {
@@ -255,11 +186,14 @@ ul li {
 
 
 .top-agencies .fa-star {
-  color: #f2de37;
+  color: #fe5f55;
   margin-bottom: 80px;
 }
 
 
+.top-agencies .fa-star:hover {
+  color: #9a9898;
+}
 
 
 
@@ -340,32 +274,11 @@ blockquote {
 }
 
 
+.media-body h3 a {
+  color: #605e69;
+}
 
-
-
-
-
-
-
-/****** Bas de page *******/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* -------------------------------------
- * CSS code specific to home page
- * (margin/padding adjustments)
- * ------------------------------------- */
+.media-body h3 a:hover {
+  text-decoration: none;
+  color: #fe5f55;
+}
