@@ -14,7 +14,7 @@ class Agency < ApplicationRecord
 
   def review_mean
    if self.reviews.length == 0
-      nil
+      0
     else
       sum = self.reviews.reduce(0){|memo, review| memo+=review.star}
       sum.fdiv(self.reviews.count)

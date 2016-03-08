@@ -21,18 +21,18 @@
 <!-- A propos/services -->
 
 
-<div id="feature-container1" class="text-center">
-
-  <div id="color">
-  <h3>Nos services</h3>
-  <%= image_tag('color-bar.png', class:"full" ) %>
-  </div>
 
 
 
 
 <div class="padded">
   <div class="container">
+    <h3 class="text-center">Nos services</h3>
+    <div class="separator">
+      <div class="separator-line">
+      </div>
+    </div>
+
     <div class="row">
       <div class="col-xs-12 col-sm-4">
       <div class="feature">
@@ -75,31 +75,35 @@
 <!-- Top des agences -->
 
 
-<div class="container">
+<div class="padded">
+  <div class="container">
+    <h2 class="text-center uppercase">Nos agences </h2>
 
-  <div class="row">
-    <% @agencies.each do |agency|%>
-    <div class="col-xs-12 col-md-4">
-      <div class="agency">
-        <%= image_tag agency.photo, class: "full" %>
-        <h2 class="uppercase"><%= agency.name %></h2>
-        <p> <%= agency.short_description %></p>
-        <div class="stars">
-          <% agency.review_mean.to_i.times do %>
-            <i class="fa fa-star"></i>
-          <% end %>
+    <div class="row">
+      <% @agencies.each do |agency|%>
+      <div class="col-xs-12 col-md-4">
+        <div class="agency">
+          <%= image_tag agency.photo, class: "full" %>
+          <h2 class="uppercase"><%= agency.name %></h2>
+          <p> <%= agency.short_description %></p>
+          <div class="stars">
+            <% agency.review_mean.to_i.times do %>
+              <i class="fa fa-star"></i>
+            <% end %>
+          </div>
         </div>
       </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
 </div>
 
 
-
 <!-- Testimonials -->
 
+<div class="padded">
 <div class="container">
+  <h2 class="text-center uppercase">Nos derniers avis </h2>
   <div class="row">
     <% @reviews.each do |review|%>
     <div class="col-xs-12 col-md-4">
@@ -126,5 +130,5 @@
     <% end %>
   </div>
 </div>
-
+</div>
 
