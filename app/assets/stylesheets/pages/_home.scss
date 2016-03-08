@@ -1,3 +1,6 @@
+.agency img{
+  width: 100%;
+}
 
 /****** banner home *******/
 
@@ -138,13 +141,6 @@ overflow: hidden;
 
 
 
-h2 {
-  text-transform: uppercase;
-  margin-bottom: 45px;
-  margin-top: 40px;
-}
-
-
 
 .btn-lg {
   background-color: transparent;
@@ -217,17 +213,9 @@ h2 {
   margin-bottom: 45px;
 }
 
-.feature-inner .fa{
-  color: #d23333;
-  font-size: 45px;
-  margin-top: 30px;
-  margin-bottom: 20px;
-}
 
 
-.fa {
-  color: #f2de37;
-}
+
 
 
 
@@ -287,15 +275,7 @@ h2 {
 }
 
 
-.top-agencies .fa-star {
-  color: #fe5f55;
-  margin-bottom: 80px;
-}
 
-
-.top-agencies .fa-star:hover {
-  color: #9a9898;
-}
 
 
 
@@ -363,24 +343,3 @@ blockquote {
 
 
 
-.media-body h3 {
-  margin-top: 50px;
-  margin-left: 150px;
-}
-
-.media-body .fa {
-  font-size: 20px;
-  letter-spacing: 10px;
-  margin-top: 10px;
-  color: #f2de37;
-}
-
-
-.media-body h3 a {
-  color: #605e69;
-}
-
-.media-body h3 a:hover {
-  text-decoration: none;
-  color: #fe5f55;
-}

@@ -25,7 +25,7 @@ class Agency < ApplicationRecord
 
 
   def short_description
-    "#{self.description[0..140]} ..."
+    "#{self.description[0..140]} ..." unless self.description.nil?
   end
 
 
