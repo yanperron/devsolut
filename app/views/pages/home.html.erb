@@ -1,5 +1,5 @@
-  <div class="banner-background row">
 
+    <div class="banner" style="background-image: linear-gradient(-225deg, rgba(255, 255, 255, 0.4) 100%, rgba(255, 255, 255, 0.4) 100%), url('<%= image_path "fondbanner3.png" %>')">
       <div class="banner-content">
         <h1>Vous cherchez une agence ?</h1>
 
@@ -7,56 +7,14 @@
         <%= form_tag agencies_path do %>
         <%= select_tag "where", options_for_select([ "France", "Ile de France" ], "France"),  class: "form-control"  %>
         <%= select_tag "what", options_for_select([ "Developpement web", "Developpement mobile" ], "Developpement web"), class: "form-control"  %>
-        <%= button_tag "Trouver", class: "btn btn-primary btn-lg" %>
+        <%= button_tag "Trouver", class: "btn btn-default btn-lg btn-block " %>
         <% end %>
 
 <!-- end -->
-
-        <div class="text-center">
-            <select class="form-control select select-primary select2-offscreen" data-toggle="select" tabindex="-1" title="" placeholder="ou?">
-            <option value="0">Où ?</option>
-            <option value="1">France</option>
-            <option value="2">Ile de France</option>
-            <option value="3">PACA</option>
-            <option value="4">Bretagne</option>
-            <option value="5">Normandie</option>
-            <option value="6">Centre</option>
-          </select>
-
-
-          <select class="form-control select select-primary select2-offscreen" data-toggle="select" tabindex="-1" title="">
-            <option value="0">Quoi ?</option>
-            <option value="1">Developpement web</option>
-            <option value="2">Developpement mobile</option>
-            <option value="3">Design</option>
-            <option value="4">E-commerce</option>
-            <option value="5">Montres connectées</option>
-          </select>
-
-
-          <select class="form-control select select-primary select2-offscreen c-select" data-toggle="select" tabindex="-1" title="">
-            <option value="0">Combien ?</option>
-            <option value="1">2k - 4,5k</option>
-            <option value="2">5k - 7k</option>
-            <option value="3">7,5k - 9,5k</option>
-            <option value="4">10k - 15k</option>
-            <option value="5">Indéterminé</option>
-          </select>
-        </div>
-
-
-
-
-        <!--Bouton démarrer-->
-        <div class="container">
-        <a class="btn btn-primary btn-lg">Trouver</a>
-        </div>
-
-
       </div>
+    </div>
 
 
-  </div>
 
 
 
@@ -67,41 +25,39 @@
 
 <!-- A propos/services -->
 
-  <div id="feature-container1" class="text-center">
+<div class="padded">
+  <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <h2 id="about"></h2>
-        </div>
-        <div class="col-sm-4 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 300ms; animation-name: fadeInUp;">
-            <div class="feature-inner">
-                <div class="icon-wrapper">
-                    <img src="assets/bookmark.png"></i>
-                </div>
-                <h3>Catalogue</h3>
-                <p>Accédez à un catalogue complet de toutes les agences de developpement web et mobile partout en France.</p>
-            </div>
-        </div>
-        <div class="col-sm-4 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 600ms; animation-name: fadeInUp;">
-            <div class="feature-inner">
-                <div class="icon-wrapper">
-                    <img src="assets/diploma.png"></i>
-                </div>
-                <h3>Classement</h3>
-                <p>Pour faire le bon choix visualisez les notes des agences sur 3 critères : compétences, influence, et avis clients. </p>
-            </div>
-        </div>
-        <div class="col-sm-4 wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="900ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 900ms; animation-name: fadeInUp;">
-            <div class="feature-inner">
-                <div class="icon-wrapper">
-                    <img src="assets/1456955809_clock.png"></i>
-                </div>
-                <h3>Devis et confidentialité</h3>
-                <p>Obtenez en 48h un devis gratuit et un contrat de confidentialité pour des échanges en toute sécurité.</p>
-            </div>
-        </div>
-
+      <div class="col-xs-12 col-sm-4">
+      <div class="feature">
+        <%= image_tag "bookmark.png"%>
+        <h3>Catalogue</h3>
+        <p>Accédez à un catalogue complet de toutes les agences de developpement web et mobile partout en France.</p>
       </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+      <div class="feature">
+
+        <%= image_tag "diploma.png"%>
+        <h3>Classement</h3>
+        <p>Pour faire le bon choix visualisez les notes des agences sur 3 critères : compétences, influence, et avis clients. </p>
+      </div>
+      </div>
+
+
+        <div class="col-xs-12 col-sm-4">
+          <div class="feature">
+
+          <%= image_tag "1456955809_clock.png"%>
+          <h3>Devis et confidentialité</h3>
+          <p>Obtenez en 48h un devis gratuit et un contrat de confidentialité pour des échanges en toute sécurité.</p>
+          </div>
+        </div>
+    </div>
   </div>
+</div>
+
 
 
 
@@ -115,8 +71,8 @@
     <div class="col-xs-12 col-sm-4">
       <div class="card-review">
       <img src="http://unsplash.it/50/50" alt="" class="avatar card-avatar">
-      <div class="card-star">
-        <% 3. times do %>
+      <div class="card-star stars">
+        <% 3.times do %>
           <i class="fa fa-star"></i>
         <% end %>
       </div>
@@ -141,114 +97,25 @@
 <!-- Top des agences -->
 
 
-
-  <div id="feature-container2" class="text-center">
-
-    <h2 class="page-header text-center" id="top"></h2>
-
-      <div style="background-color: #f5f3f3; margin-top: -22px;">
-        <div class="container">
-
-         <div class="row">
-
-          <div class="col-xs-12 col-sm-4 text-center top-agencies">
-
-            <img src="assets/bureau-developpement.jpg" style="width: 330px;">
-
-              <h4>Elephantius</h4>
-              <p>Agence spécialisée en developpement d'application iOS et particulièrement les réseaux sociaux.</p>
-
-              <ul class="pull-left">
-                <li>Linkedin</li>
-                <li><i class="fa fa-star"></i></li>
-                <li><i class="fa fa-star"></i></li>
-                <li><i class="fa fa-star"></i></li>
-              </ul>
-
-              <ul class="pull-left">
-                <li>Github</li>
-                <li><i class="fa fa-star"></i></li>
-                <li><i class="fa fa-star"></i></li>
-                <li><i class="fa fa-star"></i></li>
-              </ul>
-
-              <ul class="pull-left">
-                <li>Avis</li>
-                <li><i class="fa fa-star"></i></li>
-                <li><i class="fa fa-star"></i></li>
-              </ul>
-
-          </div>
-
-
-
-
-
-
-
-  <div class="col-xs-12 col-sm-4 text-center top-agencies">
-
-      <img src="assets/personal-branding.jpg" style="width: 330px;">
-
-        <h4>Meosis</h4>
-        <p>Developpeur web avec des fonctionnalités originales et des widgets ludiques.</p>
-
-        <ul class="pull-left">
-          <li>Linkedin</li>
-          <li><i class="fa fa-star"></i></li>
-          <li><i class="fa fa-star"></i></li>
-          <li><i class="fa fa-star"></i></li>
-          <li><i class="fa fa-star"></i></li>
-        </ul>
-
-        <ul class="pull-left">
-          <li>Github</li>
-          <li><i class="fa fa-star"></i></li>
-          <li><i class="fa fa-star"></i></li>
-        </ul>
-
-        <ul class="pull-left">
-          <li>Avis</li>
-          <li><i class="fa fa-star"></i></li>
-          <li><i class="fa fa-star"></i></li>
-          <li><i class="fa fa-star"></i></li>
-        </ul>
-
+<div class="container">
+  <div class="row">
+    <% @agencies.each do |agency|%>
+    <div class="col-xs-12 col-md-4">
+      <div class="agency">
+        <%= image_tag @agency.photo %>
+        <h2><%= @agency.name %></h2>
+        <p> <%= @agency.short_description %></p>
+        <div class="stars">
+          <% @agency.review_mean.times do %>
+            <i class="fa fa-star"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <% end %>
   </div>
+</div>
 
-
-
-
-  <div class="col-xs-12 col-sm-4 text-center top-agencies">
-
-      <img src="assets/infogone.png" style="width: 330px;">
-
-            <h4>Infogone</h4>
-            <p>Developpeur web et mobile. Spécialiste des applications Android et réputé pour ses design.</p>
-
-        <ul class="pull-left">
-          <li>Linkedin</li>
-          <li><i class="fa fa-star"></i></li>
-          <li><i class="fa fa-star"></i></li>
-          <li><i class="fa fa-star"></i></li>
-        </ul>
-
-        <ul class="pull-left">
-          <li>Github</li>
-          <li><i class="fa fa-star"></i></li>
-          <li><i class="fa fa-star"></i></li>
-        </ul>
-
-        <ul class="pull-left">
-          <li>Avis</li>
-          <li><i class="fa fa-star"></i></li>
-          <li><i class="fa fa-star"></i></li>
-          <li><i class="fa fa-star"></i></li>
-          <li><i class="fa fa-star"></i></li>
-        </ul>
-
-
-  </div>
 
 
 <!-- Testimonials -->

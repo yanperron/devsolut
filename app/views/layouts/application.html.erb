@@ -14,9 +14,7 @@
   <body class="<%= "#{controller_name} #{action_name}" %>">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <div class="container-fluid">
     <%= yield %>
-    </div>
     <%= render 'shared/footer' %>
 
     <%= javascript_include_tag 'application' %>

@@ -19,6 +19,7 @@ gem 'autoprefixer-rails'
 gem 'cloudinary'
 gem 'carrierwave'
 gem 'nokogiri'
+gem 'activeadmin', github: 'activeadmin'
 
 #gem 'sidekiq'
 #gem 'sinatra'  # Dependency of sidekiq
