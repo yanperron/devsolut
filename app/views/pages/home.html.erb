@@ -1,7 +1,6 @@
-
     <div class="banner" style="background-image: linear-gradient(-225deg, rgba(255, 255, 255, 0.4) 100%, rgba(255, 255, 255, 0.4) 100%), url('<%= image_path "fondbanner3.png" %>')">
       <div class="banner-content">
-        <h1>Vous cherchez une agence ?</h1>
+          <h1>Vous cherchez une agence ?</h1>
 
 <!-- Formulaire à refactoriser avec un form_tag -->
         <%= form_tag agencies_path do %>
@@ -19,11 +18,18 @@
 
 
 
-
-
-
-
 <!-- A propos/services -->
+
+
+<div id="feature-container1" class="text-center">
+
+  <div id="color">
+  <h3>Nos services</h3>
+  <%= image_tag('color-bar.png', class:"full" ) %>
+  </div>
+
+
+
 
 <div class="padded">
   <div class="container">
@@ -57,6 +63,8 @@
     </div>
   </div>
 </div>
+
+                  </div>
 
 
 
@@ -96,6 +104,8 @@
 
 <!-- Top des agences -->
 
+ <div class="col-xs-12 col-sm-4 text-center top-agencies">
+
 
 <div class="container">
   <div class="row">
@@ -120,64 +130,67 @@
 
 <!-- Testimonials -->
 
-  <div class="container">
+<div class="container">
 
     <div class="testimonial">
 
-    <div class="container">
-      <div class="col-xs-12 col-sm-6">
-        <div class="media">
-            <div class="pull-left">
-                <a href="#"><img src="assets/profile1.png" style="width: 100px;" alt=""></a>
+        <div class="container">
+
+
+                          <div class="col-xs-12 col-sm-6">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <a href="#"><img src="assets/profile1.png" style="width: 100px;" alt=""></a>
+                                </div>
+                                <div class="media-body">
+                                    <blockquote>Très satisfait de la prestation !
+                                    Une équipe sympa, dynamique et efficace.
+                                    Très bénéfique pour mon entreprise.</blockquote>
+
+
+                                   <ul class="pull-left">
+                                      <li><i class="fa fa-star"></i></li>
+                                      <li><i class="fa fa-star"></i></li>
+                                      <li><i class="fa fa-star"></i></li>
+                                   </ul>
+                                    <h3><a href="#">- Jhon Kalis</a></h3>
+
+
+
+                                </div>
+                            </div>
+                          </div>
+
+
+
+
+                     <div class="col-xs-12 col-sm-6">
+
+                            <div class="media">
+                                <div class="pull-left">
+                                    <a href="#"><img src="assets/profile2.png" style="width: 100px;" alt=""></a>
+                                </div>
+                                <div class="media-body">
+                                    <blockquote>Entreprise jeune et dynamique, à l’écoute du client.
+                                    Également disponible pour le suivi ou les modifications à apporter sur le site.</blockquote>
+
+
+                                  <ul class="pull-left">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                  </ul>
+                                    <h3><a href="">- Abraham Josef</a></h3>
+
+
+                                </div>
+                            </div>
+
+                      </div>
+                      </div>
+
+              </div>
             </div>
-            <div class="media-body">
-                <blockquote>Très satisfait de la prestation !
-                Une équipe sympa, dynamique et efficace.
-                Très bénéfique pour mon entreprise.</blockquote>
-
-
-               <ul class="pull-left">
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-                  <li><i class="fa fa-star"></i></li>
-               </ul>
-                <h3><a href="#">- Jhon Kalis</a></h3>
-
-            </div>
-        </div>
-      </div>
-
-
-
-
-      <div class="col-xs-12 col-sm-6">
-
-        <div class="media">
-            <div class="pull-left">
-                <a href="#"><img src="assets/profile2.png" style="width: 100px;" alt=""></a>
-            </div>
-            <div class="media-body">
-                <blockquote>Entreprise jeune et dynamique, à l’écoute du client.
-                Également disponible pour le suivi ou les modifications à apporter sur le site.</blockquote>
-
-
-              <ul class="pull-left">
-                <li><i class="fa fa-star"></i></li>
-                <li><i class="fa fa-star"></i></li>
-                <li><i class="fa fa-star"></i></li>
-              </ul>
-                <h3><a href="">- Abraham Josef</a></h3>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
 
 
 

@@ -1,30 +1,52 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Agencies</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Address</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @agencies.each do |agency| %>
-      <tr>
-        <td><%= agency.name %></td>
-        <td><%= agency.description %></td>
-        <td><%= agency.address %></td>
-        <td><%= link_to 'Show', agency %></td>
-        <td><%= link_to 'Edit', edit_agency_path(agency) %></td>
-        <td><%= link_to 'Destroy', agency, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+
+<div class="padded">
+<h1 class="text-center">Voici toutes les Agences suscesptible de vous intéressez  :</h1>
+  <div class="container">
+    <div class="row">
+        <% @agencies.each do |agency| %>
+            <div class="col-xs-12 col-md-4"  >
+            <%= link_to agency_path(agency) do %>
+
+              <div class="card-product" id="fontindex" >
+                <strong>  <%= cl_image_tag agency.photo, class:"card-logo"  %> </strong>
+              </div>
+
+                <div class="col-xs-12 col-md-6"  >
+
+                <div class="card-content text-center">
+                <strong>  <p><%= agency.name  %></p>
+                  <p><% star = agency.review_mean %></p>
+                   <% (1..star).to_a.each do %>
+                  <i class="fa fa-star"></i>
+                  <% end %>
+
+                  <p><%= agency.description %></p> </strong>
+
+
+                  <div class="btn btn-primary">
+                  voir l'Agence
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            <% end %>
+          <% end %>
+
+
+    </div>
+  </div>
+
+</div>
+</div>
+
+
 
 <br>
 

@@ -1,41 +1,276 @@
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @agency.name %>
-</p>
+<h1 class="text-center"><u> Voici les détails de cette Agence : </u></h1>
 
-<p>
-  <strong>Description:</strong>
-  <%= @agency.description %>
-</p>
+<div class="padded">
+  <div class="container">
+    <div class="row">
 
-<p>
-  <strong>Address:</strong>
-  <%= @agency.address %>
-</p>
+      <div class="col-xs-12 col-md-6" id="photo">
+        <%= cl_image_tag @agency.photo, height: 399, width: 500 %>
+      </div>
 
-<p>
-<strong>References:</strong>
-</p>
-<% @agency.references.each do |r| %>
-<p> <%= r.name %> </p>
-<p> <%= r.description %> </p>
-<%= cl_image_tag r.photo, crop: :fill %>
-<% end %>
+      <div class="col-xs-12 col-md-6" id="description">
 
-<p>
-<strong>Reviews:</strong>
-</p>
-<% @agency.reviews.each do |r| %>
-<p> <%= r.description %> </p>
-<p> <%= r.user.last_name %> </p>
+      <p>
+      <strong> <u> Name: </u></strong>
+      <%= @agency.name %>
+      </p>
 
-<% end %>
-<%= link_to 'Add a Review', new_agency_review_path(@agency) %> |
-<%= link_to 'Add a Reference', new_agency_reference_path(@agency) %> |
-<%= link_to 'Ask for a quote', new_agency_quote_path(@agency) %> |
-<%= link_to 'Edit', edit_agency_path(@agency) %> |
-<%= link_to 'Back', agencies_path %>
+      <p>
+      <strong> <u> Description:</u> </strong>
+      <%= @agency.description %>
+      </p>
+
+      <p>
+      <strong> <u> Address: </u> </strong>
+      <%= @agency.address %>
+      </p>
+
+
+       <p>
+      <strong> <u> Github info: </u> </strong>
+      <%= @agency.repos_public %>
+      <%= @agency.total_stars %>
+      <%= @agency.total_members %>
+      </p>
+
+      <p>
+      <strong><u> References: </u></strong>
+      </p>
+      <% @agency.references.each do |r| %>
+      <p> <%= r.name %> </p>
+      <p> <%= r.description %> </p>
+      <%= cl_image_tag r.photo, crop: :fill %>
+      <% end %>
+
+      <p>
+      <strong> <u> Reviews: </u> </strong>
+      </p>
+      <p> <%= @agency.review_mean %> </p>
+      <% @agency.reviews.each do |r| %>
+      <p> <%= r.description %> </p>
+      <p> <%= r.user.last_name %> </p>
+      <p> <%= r.star %> </p>
+
+
+      <% end %>
+
+      <div class ="padded-product text-center">
+      <%= link_to 'Ask for a quote', new_agency_quote_path(@agency), :class => "btn btn-danger" %>
+      </div>
+
+      <div class="text-center" id="bottom-link">
+      <%= link_to 'Add a Review', new_agency_review_path(@agency) %> |
+      <%= link_to 'Add a Reference', new_agency_reference_path(@agency) %> |
+      <%= link_to 'Edit', edit_agency_path(@agency) %> |
+      <%= link_to 'Back', agencies_path %>
+      </div>
+
+      </div>
+    </div>
+ </div>
+</div>
+
+
+
+<!-- ajouter l'img de la home = ligne/fleche orange -->
+ <div id="color">
+  <h3> Reviews </h3>
+  <%= image_tag('color-bar.png', class:"full" ) %>
+  </div>
+
+
+<div class="padded">
+
+  <div class="container">
+    <div class="testimonial">
+   <!--  <div class="row">
+      <% @agency.reviews.each do |review|%>
+        <div class="col-xs-12 col-sm-6">
+         <div class="media">
+            <div class="pull-left">
+
+            <%= image_tag "http://t0.gstatic.com/images?q=tbn:ANd9GcQ4fto24q0e4zt_rsUjcIFmZ3SsnWEbeizSl0f4u69vjqP3dd8dksN8kWA", class: "avatar card-avatar" %>
+           </div>
+             <div class="media-body">
+             <blockquote> <%= review.description %>
+            </blockquote>
+
+            <div class="pull-left">
+              <% if review.star.nil? %>
+              <% else %>
+                <% star = review.star %>
+                <% (1..star).to_a.each do %>
+                  <i class="fa fa-star"></i>
+                <% end %>
+              <% end %>
+            </div>
+          <h3><a href="#">- <%= review.user.last_name %></a></h3>
+
+
+
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+
+</div>
+-->
+
+<div class="container">
+    <div class="container">
+
+       <div class="col-xs-12 col-sm-6">
+         <div class="media">
+
+            <div class="pull-left">
+              <a href="#"><img src="assets/profile1.png" style="width: 100px;" alt=""></a>
+            </div>
+
+            <div class="media-body">
+               <blockquote>Très satisfait de la prestation !
+               Une équipe sympa, dynamique et efficace.
+               Très bénéfique pour mon entreprise.</blockquote>
+
+               <ul class="pull-left"  >
+                  <li><i class="fa fa-star" ></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+               </ul>
+
+               <h3><a href="#">- Jhon Kalis</a></h3>
+
+            </div>
+         </div>
+       </div>
+
+       <div class="col-xs-12 col-sm-6">
+         <div class="media">
+
+            <div class="pull-left">
+              <a href="#"><img src="assets/profile2.png" style="width: 100px;" alt=""></a>
+            </div>
+
+            <div class="media-body">
+              <blockquote>Entreprise jeune et dynamique, à l’écoute du client.
+              Également disponible pour le suivi ou les modifications à apporter sur le site.</blockquote>
+
+              <ul class="pull-left">
+                 <li><i class="fa fa-star"></i></li>
+                 <li><i class="fa fa-star"></i></li>
+                 <li><i class="fa fa-star"></i></li>
+              </ul>
+
+              <h3><a href="">- Abraham Josef</a></h3>
+            </div>
+
+         </div>
+
+       </div>
+
+             <div class="col-xs-12 col-sm-6">
+         <div class="media">
+
+            <div class="pull-left">
+              <a href="#"><img src="assets/profile1.png" style="width: 100px;" alt=""></a>
+            </div>
+
+            <div class="media-body">
+               <blockquote>Très satisfait de la prestation !
+               Une équipe sympa, dynamique et efficace.
+               Très bénéfique pour mon entreprise.</blockquote>
+
+               <ul class="pull-left">
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+               </ul>
+
+               <h3><a href="#">- Jhon Kalis</a></h3>
+
+            </div>
+         </div>
+       </div>
+
+       <div class="col-xs-12 col-sm-6">
+         <div class="media">
+
+            <div class="pull-left">
+              <a href="#"><img src="assets/profile2.png" style="width: 100px;" alt=""></a>
+            </div>
+
+            <div class="media-body">
+              <blockquote>Entreprise jeune et dynamique, à l’écoute du client.
+              Également disponible pour le suivi ou les modifications à apporter sur le site.</blockquote>
+
+              <ul class="pull-left">
+                 <li><i class="fa fa-star"></i></li>
+                 <li><i class="fa fa-star"></i></li>
+                 <li><i class="fa fa-star"></i></li>
+              </ul>
+
+              <h3><a href="">- Abraham Josef</a></h3>
+            </div>
+
+         </div>
+       </div>
+
+              <div class="col-xs-12 col-sm-6">
+         <div class="media">
+
+            <div class="pull-left">
+              <a href="#"><img src="assets/profile1.png" style="width: 100px;" alt=""></a>
+            </div>
+
+            <div class="media-body">
+               <blockquote>Très satisfait de la prestation !
+               Une équipe sympa, dynamique et efficace.
+               Très bénéfique pour mon entreprise.</blockquote>
+
+               <ul class="pull-left">
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+               </ul>
+
+               <h3><a href="#">- Jhon Kalis</a></h3>
+
+            </div>
+         </div>
+       </div>
+
+       <div class="col-xs-12 col-sm-6">
+         <div class="media">
+
+            <div class="pull-left">
+              <a href="#"><img src="assets/profile2.png" style="width: 100px;" alt=""></a>
+            </div>
+
+            <div class="media-body">
+              <blockquote>Entreprise jeune et dynamique, à l’écoute du client.
+              Également disponible pour le suivi ou les modifications à apporter sur le site.</blockquote>
+
+              <ul class="pull-left">
+                 <li><i class="fa fa-star"></i></li>
+                 <li><i class="fa fa-star"></i></li>
+                 <li><i class="fa fa-star"></i></li>
+              </ul>
+
+              <h3><a href="">- Abraham Josef</a></h3>
+            </div>
+
+         </div>
+       </div>
+
+
+
+     </div>
+  </div>
+</div>
+
 
 
