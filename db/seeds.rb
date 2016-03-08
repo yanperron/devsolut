@@ -16,7 +16,9 @@ user2 = User.create!(email:"exemple@admin.com", password: "12345678", photo: "ht
 
 # Seed agency
 Agency.destroy_all
-agency1 = Agency.create!(name:"Fullsix", user: user1)
+agency1 = Agency.create!(name:"Fullsix", user: user1, photo:"http://unslpash.it/300/300", description: "trop cool" )
+agency1 = Agency.create!(name:"Le Wagon", user: user1, photo:"http://unslpash.it/300/300", description: "trop cool" )
+agency1 = Agency.create!(name:"BFR", user: user1, photo:"http://unslpash.it/300/300", description: "trop cool" )
 
 
 Review.destroy_all

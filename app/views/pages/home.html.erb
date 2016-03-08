@@ -72,51 +72,20 @@
 
 
 
-<!-- Top des agences avec une card-->
-
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <div class="card-review">
-      <img src="http://unsplash.it/50/50" alt="" class="avatar card-avatar">
-      <div class="card-star stars">
-        <% 3.times do %>
-          <i class="fa fa-star"></i>
-        <% end %>
-      </div>
-      <div class="card-title">
-        <h4>Elephantius</h4>
-      </div>
-
-      <div class="card-quote">
-      <div class="quote-wrapper">
-        <p class="quote-start quote-tick">"</p>
-         <p class="quote-content">Agence spécialisée en developpement d'application iOS et particulièrement les réseaux sociaux.</p>
-         <p class="quote-end quote-tick">"</p>
-      </div>
-      </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-
 <!-- Top des agences -->
 
- <div class="col-xs-12 col-sm-4 text-center top-agencies">
-
 
 <div class="container">
+
   <div class="row">
     <% @agencies.each do |agency|%>
     <div class="col-xs-12 col-md-4">
       <div class="agency">
-        <%= image_tag @agency.photo %>
-        <h2><%= @agency.name %></h2>
-        <p> <%= @agency.short_description %></p>
+        <%= image_tag agency.photo, class: "full" %>
+        <h2 class="uppercase"><%= agency.name %></h2>
+        <p> <%= agency.short_description %></p>
         <div class="stars">
-          <% @agency.review_mean.times do %>
+          <% agency.review_mean.to_i.times do %>
             <i class="fa fa-star"></i>
           <% end %>
         </div>
@@ -131,72 +100,31 @@
 <!-- Testimonials -->
 
 <div class="container">
+  <div class="row">
+    <% @reviews.each do |review|%>
+    <div class="col-xs-12 col-md-4">
+      <div class="card-review">
+        <%= image_tag review.user.photo, class:"avatar card-avatar"  %>
+        <div class="card-star stars">
+          <% review.star.to_i.times do %>
+            <i class="fa fa-star"></i>
+          <% end %>
+        </div>
+        <div class="card-title">
+          <h4><%= review.user.full_name %></h4>
+        </div>
 
-    <div class="testimonial">
-
-        <div class="container">
-
-
-                          <div class="col-xs-12 col-sm-6">
-                            <div class="media">
-                                <div class="pull-left">
-                                    <a href="#"><img src="assets/profile1.png" style="width: 100px;" alt=""></a>
-                                </div>
-                                <div class="media-body">
-                                    <blockquote>Très satisfait de la prestation !
-                                    Une équipe sympa, dynamique et efficace.
-                                    Très bénéfique pour mon entreprise.</blockquote>
-
-
-                                   <ul class="pull-left">
-                                      <li><i class="fa fa-star"></i></li>
-                                      <li><i class="fa fa-star"></i></li>
-                                      <li><i class="fa fa-star"></i></li>
-                                   </ul>
-                                    <h3><a href="#">- Jhon Kalis</a></h3>
-
-
-
-                                </div>
-                            </div>
-                          </div>
-
-
-
-
-                     <div class="col-xs-12 col-sm-6">
-
-                            <div class="media">
-                                <div class="pull-left">
-                                    <a href="#"><img src="assets/profile2.png" style="width: 100px;" alt=""></a>
-                                </div>
-                                <div class="media-body">
-                                    <blockquote>Entreprise jeune et dynamique, à l’écoute du client.
-                                    Également disponible pour le suivi ou les modifications à apporter sur le site.</blockquote>
-
-
-                                  <ul class="pull-left">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                  </ul>
-                                    <h3><a href="">- Abraham Josef</a></h3>
-
-
-                                </div>
-                            </div>
-
-                      </div>
-                      </div>
-
-              </div>
-            </div>
-
-
-
-
-
-
-
+        <div class="card-quote">
+        <div class="quote-wrapper">
+          <p class="quote-start quote-tick">"</p>
+           <p class="quote-content"> <%= review.description %></p>
+           <p class="quote-end quote-tick">"</p>
+        </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
 
 
