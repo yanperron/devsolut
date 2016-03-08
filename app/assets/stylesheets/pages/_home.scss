@@ -1,4 +1,49 @@
+
 /****** banner home *******/
+
+.feature{
+  height: 300px;
+  text-align: center;
+
+}
+.feature img{
+  width: 70px;
+}
+
+.feature h3{
+  font-size: 20px;
+}
+.btn-small {
+  border: 1px solid white;
+  height: 32px;
+  text-align: center;
+  width: 150px;
+  padding-top: 4px;
+  margin-top: -20px;
+}
+
+.btn-small:hover {
+  border: 1px solid white;
+  background-color: #e1dddd;
+  color: #616668;
+}
+
+
+#ref {
+  border-color: #5776b6;
+  margin-top: -30px;
+}
+
+#refe:hover {
+  color: #616668;
+}
+
+#refe {
+  margin-top: -2px;
+}
+
+/******* Menu mignature en model xs *******/
+
 
 #video_background{
 position: absolute;
@@ -15,23 +60,70 @@ overflow: hidden;
 
 
 
-.banner-background {
-  color: white;
-  text-align: center;
-  height: 120vh;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+// .banner-background {
+//   color: white;
+//   text-align: center;
+//   height: 120vh;
+//   background-size: cover;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
 
-.banner-content h1 {
-  font-family: 'Arial', sans-serif;
-  font-size: 45px;
-  color: #616668;
-  letter-spacing: 0px;
-  font-weight: normal;
-}
+// .banner-content h1 {
+//   font-family: 'Arial', sans-serif;
+//   font-size: 45px;
+//   color: #616668;
+//   letter-spacing: 0px;
+//   font-weight: normal;
+// }
+
+
+
+
+
+
+
+/****** Page d'accueil ******/
+
+// .home .banner-background {
+//   background-image: linear-gradient(-225deg, rgba(255, 255, 255, 0.4) 100%, rgba(255, 255, 255, 0.4) 100%), url('fondbanner3.png');
+//   background-size: cover;
+//   background-position: center;
+//   height: 600px;
+//   background-repeat: no-repeat;
+//   margin-top: 50px;
+// }
+
+// .banner-background {
+//   color: white;
+//   text-align: center;
+//   height: 120vh;
+//   background-size: cover;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+
+// .background-image {
+//   margin-top: 50px;
+// }
+
+
+// .banner-background img {
+//   filter: blur(0px);
+// }
+
+
+// .banner-content h1 {
+//   font-family: 'Arial', sans-serif;
+//   font-size: 45px;
+//   color: #616668;
+//   margin-top: 120px;
+//   letter-spacing: 0px;
+//   font-weight: normal;
+// }
 
 
 
@@ -157,6 +249,16 @@ h2 {
   background-color: #e1dddd;
 }
 
+
+// .col-xs-12 img{
+//   margin-top: 100px;
+//   border-radius: 2px;
+// }
+
+
+// ul li {
+//   display: inline;
+// }
 
 
 

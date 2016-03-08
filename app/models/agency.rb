@@ -11,6 +11,7 @@ class Agency < ApplicationRecord
   after_create :enrich_github
 
 
+
   def review_mean
    if self.reviews.length == 0
       nil
@@ -20,6 +21,12 @@ class Agency < ApplicationRecord
    end
   end
 
+
+
+
+  def short_description
+    "#{self.description[0..140]} ..."
+  end
 
 
   private
