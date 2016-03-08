@@ -12,6 +12,7 @@ class Agency < ApplicationRecord
     "#{self.description[0..140]} ..."
   end
 
+
   private
 
   def enrich_github
