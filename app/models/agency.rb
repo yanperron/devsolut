@@ -8,6 +8,10 @@ class Agency < ApplicationRecord
   after_create :enrich_github
 
 
+  def short_description
+    "#{self.description[0..140]} ..."
+  end
+
   private
 
   def enrich_github
