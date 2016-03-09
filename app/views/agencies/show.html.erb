@@ -29,7 +29,7 @@
       </p>
 
 
-       <p>
+      <p>
       <strong> <u> Github info: </u> </strong>
       <%= @agency.repos_public %>
       <%= @agency.total_stars %>
@@ -48,13 +48,12 @@
       <p>
       <strong> <u> Reviews: </u> </strong>
       </p>
+
       <p> <%= @agency.review_mean.to_i.times do %>
             <i class="fa fa-star"></i>
-
-
-
       <% end %>
-       </p>
+      </p>
+
       <div class ="padded-product text-center">
       <%= link_to 'Ask for a quote', new_agency_quote_path(@agency), :class => "btn btn-danger" %>
       </div>
@@ -72,7 +71,6 @@
 </div>
 
 
-
 <!-- ajouter l'img de la home = ligne/fleche orange -->
  <div id="color">
   <h3> Reviews </h3>
@@ -80,4 +78,3 @@
   </div>
 
 <%= render "agencies/cards" %>
-
