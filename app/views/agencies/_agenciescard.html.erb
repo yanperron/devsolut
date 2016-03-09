@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
     <% @agencies.each do |agency|%>
-    <div class="col-xs-12 col-md-4">
+
       <div class="agency">
-        <%= image_tag agency.photo %>
+        <%= link_to image_tag("agency.photo"), agency_path(agency) %>
         <h2><%= agency.name %></h2>
         <p> <%= agency.short_description %></p>
         <div class="stars">
@@ -12,7 +12,7 @@
           <% end %>
         </div>
       </div>
-    </div>
+
     <% end %>
   </div>
 </div>
