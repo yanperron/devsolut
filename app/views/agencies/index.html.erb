@@ -1,10 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<div class="padded">
-<h1 class="text-center">Voici toutes les agences suscesptibles de vous intéresser:</h1>
-<%= render "agencies/agenciescard" %>
+<div class="agency-list">
+  <div class="padded">
+  <div class="container">
+    <div class="row">
+    <h1 class="text-center">Les agences suscesptibles de vous intéresser:</h1>
+    <div class="separator">
+    <div class="separator-line">
+    </div>
+    </div>
+      <% @agencies.each do |agency| %>
+        <div class="col-xs-12 col-md-4">
+          <%= render "agencies/agency", :agency => agency %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  </div>
+
+  <br>
+
+  <%= link_to 'New Agency', new_agency_path %>
+
 </div>
-
-<br>
-
-<%= link_to 'New Agency', new_agency_path %>
