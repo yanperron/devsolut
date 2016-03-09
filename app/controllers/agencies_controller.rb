@@ -7,6 +7,12 @@ class AgenciesController < ApplicationController
   # GET /agencies
   def index
     @agencies = Agency.all
+
+  end
+
+  def search
+    @agencies = Agency.where("description = ?", params[:what])
+
   end
 
   # GET /agencies/1
@@ -68,7 +74,7 @@ class AgenciesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def agency_params
-      params.require(:agency).permit(:name, :description, :address, :user_id, :photo, :photo_cache)
+      params.require(:agency).permit(:name, :description, :address, :user_id, :where, :photo, :photo_cache)
     end
 
 end

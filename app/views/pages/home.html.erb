@@ -4,8 +4,8 @@
 
 <!-- Formulaire à refactoriser avec un form_tag -->
         <%= form_tag agencies_path do %>
-        <%= select_tag "where", options_for_select([ "France", "Ile de France" ], "France"),  class: "form-control btn btn-danger dropdown-toggle" %>
-        <%= select_tag "what", options_for_select([ "Developpement web", "Developpement mobile" ], "Developpement web"), class: "form-control btn btn-danger dropdown-toggle" %>
+        <%= select_tag "agency[where]", options_for_select([ "France", "Ile de France" ], "France"),  class: "form-control btn btn-danger dropdown-toggle" %>
+        <%= select_tag "agency[what]", options_for_select([ "Developpement web", "Developpement mobile" ], "Developpement web"), class: "form-control btn btn-danger dropdown-toggle" %>
         <%= button_tag "Trouver", class: "btn btn-default btn-lg btn-block" %>
         <% end %>
 <!-- end -->
