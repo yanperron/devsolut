@@ -26,3 +26,24 @@
   bottom: 10px;
   right: 10px;
 }
+
+.agency-card img{
+  max-width: 300px;
+  max-height: 100px;
+}
+
+.agency-card{
+  border: 1px solid $gray-lighter;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: white;
+  box-shadow: 1px 1px 1px #656565;
+}
+
+.agency-card:hover{
+  border: 1px solid $gray;
+  text-decoration: none !important;
+}
+

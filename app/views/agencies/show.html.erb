@@ -1,18 +1,14 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1 class="text-center"><u> Voici les détails de cette Agence : </u></h1>
+<h1 class="text-center justify"><u> Informations sur votre agence : </u></h1>
 
-<div class="padded">
+<div class="padded" background-color:"#E8E8E8">
   <div class="container">
     <div class="row">
 
-      <div class="col-xs-12 col-md-6" id="photo">
-        <%= cl_image_tag @agency.photo, height: 399, width: 500 %>
-      </div>
-
-      <div class="col-xs-12 col-md-6" id="description">
-
+      <div class="col-xs-12 col-md-8" id="description">
+        <%= cl_image_tag @agency.photo, crop: "pad", class: "logo-md" %>
       <p>
       <strong> <u> Name: </u></strong>
       <%= @agency.name %>
@@ -29,7 +25,7 @@
       </p>
 
 
-       <p>
+      <p>
       <strong> <u> Github info: </u> </strong>
       <%= @agency.repos_public %>
       <%= @agency.total_stars %>
@@ -48,16 +44,12 @@
       <p>
       <strong> <u> Reviews: </u> </strong>
       </p>
+
       <p> <%= @agency.review_mean.to_i.times do %>
             <i class="fa fa-star"></i>
-
-
-
       <% end %>
-       </p>
-      <div class ="padded-product text-center">
-      <%= link_to 'Ask for a quote', new_agency_quote_path(@agency), :class => "btn btn-danger" %>
-      </div>
+      </p>
+
 
       <div class="text-center" id="bottom-link">
       <%= link_to 'Add a Review', new_agency_review_path(@agency) %> |
@@ -67,10 +59,17 @@
       </div>
 
       </div>
-    </div>
+      <div class="col-xs-12 col-md-4" id="description">
+        <div class ="padded-product text-center">
+          <%= link_to 'Ask for a quote', new_agency_quote_path(@agency), :class => "btn btn-danger" %>
+        </div>
+        <br>
+        <div class="col-xs-12 col-md-12" id="description">
+      <%= cl_image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@agency.address}&size=600x300&maptype=roadmap", class: "full" %>
+      </div>
+      </div>
  </div>
 </div>
-
 
 
 <!-- ajouter l'img de la home = ligne/fleche orange -->
@@ -79,5 +78,27 @@
   <%= image_tag('color-bar.png', class:"full" ) %>
   </div>
 
-<%= render "agencies/cards" %>
 
+<!-- La carte -->
+
+<!-- <div class="padded">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+      <%= cl_image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@agency.address}&size=600x300&maptype=roadmap", class: "full" %>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- Toutes les reviews -->
+
+<div class="container">
+  <div class="row">
+      <% @agency.reviews.each do |review| %>
+        <div class="col-xs-offset-2 col-xs-8">
+          <%= render 'agencies/review', :review => review %>
+        </div>
+      <% end %>
+  </div>
+</div>
