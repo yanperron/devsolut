@@ -64,16 +64,17 @@
     <div class="row">
       <% @agencies.each do |agency|%>
       <div class="col-xs-12 col-md-4">
-        <div class="agency">
-          <%= image_tag agency.photo, class: "full" %>
-          <h2 class="uppercase"><%= agency.name %></h2>
-          <p> <%= agency.short_description %></p>
-          <div class="stars">
-            <% agency.review_mean.to_i.times do %>
-              <i class="fa fa-star"></i>
-            <% end %>
-          </div>
-        </div>
+      <div class="agency-card">
+  <%= cl_image_tag agency.photo, width: 300, height:  100, crop: :pad %>
+
+  <h2><%= agency.name %></h2>
+  <p> <%= agency.short_description %></p>
+  <div class="stars">
+    <% agency.review_mean.to_i.times do %>
+      <i class="fa fa-star"></i>
+    <% end %>
+  </div>
+</div>
       </div>
       <% end %>
     </div>

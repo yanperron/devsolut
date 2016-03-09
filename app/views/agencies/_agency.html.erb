@@ -3,8 +3,14 @@
 <div class="agency-card">
   <%= cl_image_tag agency.photo, width: 300, height:  100, crop: :pad %>
   <% end %>
+
   <h2><%= agency.name %></h2>
+   <div class="separator">
+      <div class="separator-line">
+      </div>
+    </div>
   <p> <%= agency.short_description %></p>
+
   <div class="stars">
     <% agency.review_mean.to_i.times do %>
       <i class="fa fa-star"></i>

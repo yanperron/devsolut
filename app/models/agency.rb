@@ -9,6 +9,7 @@ class Agency < ApplicationRecord
 
 
   after_create :enrich_github
+  after_create :enrich_linkedin
 
 
 
@@ -34,6 +35,12 @@ class Agency < ApplicationRecord
   def enrich_github
     if self.github_account
       GithubEnrichmentJob.perform_now(self.id)
+    end
+  end
+
+  def enrich_linkedin
+    if self.linkedin_account
+      LinkedinEnrichmentJob.perform_now(self.id)
     end
   end
 
