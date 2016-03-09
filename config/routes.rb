@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   resources :agencies do
     collection do
       get "compare", to: "agencies#compare"
